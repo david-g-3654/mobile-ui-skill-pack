@@ -39,7 +39,7 @@ skills/
       anti-patterns.md          46 generic tells → fixes (10 found in evals)
       layout-budget.md          frames, rhythm, heights, per-archetype budgets
       copy.md · motion-and-feedback.md · accessibility.md · lint.md
-    scripts/mobile_ui_lint.py   21 rules for generic-UI tells across .swift/.tsx/.dart (ships with the skill)
+    scripts/mobile_ui_lint.py   22 rules for generic-UI tells across .swift/.tsx/.dart (ships with the skill)
       screen-*.md               14 archetypes: home, list, detail, settings, onboarding, paywall,
                                 auth, profile, stats, form, chat, search, sheet, states
   mobile-ui-swiftui/            HOW in SwiftUI (iOS 17+, Swift 6)
@@ -108,16 +108,16 @@ npx skills add ./mobile-ui-skill-pack --skill '*'
 
 Tested with `skills` 1.7.2: discovery lists all four skills, and an install for Codex and Cursor puts them in `.agents/skills/`, where the bundled linter runs from a platform skill.
 
-## Verification status (v0.4)
+## Verification status (v0.4.1)
 
 | Check | Result |
 |---|---|
-| SwiftUI assets: `swiftc -typecheck`, iOS 17 simulator SDK, Swift 6 language mode | ✅ passes |
-| React Native assets: `tsc --strict` against RN 0.76, Expo Router 4, expo-haptics, vector-icons types | ✅ passes |
-| Flutter assets: `flutter analyze` (Flutter 3.47.7) | ✅ no issues |
+| SwiftUI assets and templates: `swiftc -typecheck`, iOS 17 simulator SDK, Swift 6 language mode | ✅ passes (re-run on 0.4.1) |
+| React Native assets and templates: `tsc --strict` against RN 0.76, Expo Router 4, expo-haptics, vector-icons types | ✅ passes (re-run on 0.4.1) |
+| Flutter assets and templates: `flutter analyze` (Flutter 3.47.7) | ✅ no issues (re-run on 0.4.1) |
 | SwiftUI templates run on an iPhone 17 / iOS 27 simulator: light, dark, loading, accessibility-XL text | ✅ `scripts/ios_preview.sh`, see `docs/previews/ios-*` |
 | Flutter templates rendered (light/dark/loading) via golden tests | ✅ see `docs/previews/flutter-*` |
-| Lint: shipped assets clean; generic fixtures trigger the expected rules | ✅ 11/11 tests |
+| Lint and API tests: shipped assets clean, generic fixtures trigger the expected rules, every public symbol `Q`-prefixed, MU118 catches the Hermes crash | ✅ 17/17 tests (re-run on 0.4.1) |
 | React Native templates run on an iPhone 17 / iOS 27 simulator (Expo SDK 57, RN 0.86): light, dark, accessibility-XL | ✅ quick check in Expo Go with `scripts/rn_preview.sh`; published previews (`docs/previews/rn-*`) are from a release build (`evals/harness/react-native-release/`) |
 | React Native assets also typecheck against SDK 52-era types (RN 0.76) | ✅ |
 | Android: React Native (release build) and Flutter templates on a Pixel 8 emulator (Android 15), light, dark, font scale 2.0 | ✅ `scripts/android_preview.sh`, see [overview](docs/previews/overview-android.png) and `docs/previews/android/`. Found and fixed: React Native's off switch was nearly invisible on Android |
