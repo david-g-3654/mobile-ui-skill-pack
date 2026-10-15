@@ -1,5 +1,7 @@
 # Mobile UI — a skill pack for agents that build app screens
 
+[![CI](https://github.com/david-g-3654/mobile-ui-skill-pack/actions/workflows/ci.yml/badge.svg)](https://github.com/david-g-3654/mobile-ui-skill-pack/actions/workflows/ci.yml)
+
 <sub>Agent Skills format · installs into Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode, Windsurf and more · SwiftUI, React Native, Flutter (preview)</sub>
 
 > **Platform status (0.4.1).** **SwiftUI and React Native are tested and strong. Flutter is a preview:** it works and scores higher on average than the baseline under all three judges, but it has known large-text and dark-mode issues (content clipped under pinned footers at the largest text size, low-contrast secondary buttons in dark mode). One judge doesn't find the Flutter win significant. Details are in the [Flutter 0.4 results](evals/results/2026-10-15-flutter-v0.4/README.md).
