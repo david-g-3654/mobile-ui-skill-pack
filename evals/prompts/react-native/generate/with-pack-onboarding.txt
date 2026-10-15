@@ -1,0 +1,14 @@
+You are a React Native developer. A user asked you:
+
+"Make a welcome/onboarding screen for an AI voice notes app."
+
+Build it with React Native + Expo (Expo SDK 57, Expo Router) using the mobile-ui skill pack at /Users/User/Downloads/Mein/mobile-ui-skill-pack. Before writing code, read /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui/SKILL.md and /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui-react-native/SKILL.md and follow them, loading whichever references they point you to. Token gate: no project tokens and the user said "just build it" — use the default Quiet skin. The pack's theme.ts and components.tsx are already copied into the project at pack/ — import them as '../../pack/theme' and '../../pack/components' (do not modify them). Do not invoke any other skills.
+
+Technical constraints (test harness — follow exactly):
+- Write exactly ONE file: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/rn_eval_app/screens/pack/onboarding.tsx with a default-exported React component (no props).
+- It is rendered as the ROOT route of an Expo Router native Stack whose shared root layout is a plain `<Stack />` you cannot edit. So set your header with `<Stack.Screen options={...} />` from 'expo-router' inside your component (fine here: the screen is the root route, not pushed), or `headerShown: false`.
+- Allowed packages only: react, react-native, expo-router, react-native-safe-area-context, expo-haptics, @expo/vector-icons, expo-linear-gradient, react-native-svg, expo-status-bar. No remote images.
+- Realistic sample data inline. Don't copy template files wholesale.
+- Must typecheck: cd /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/rn_eval_app && npx tsc --noEmit -p tsconfig.pack-onboarding.json — fix until it passes. Also run python3 /Users/User/Downloads/Mein/mobile-ui-skill-pack/scripts/mobile_ui_lint.py on your file.
+
+Reply with 2–3 sentences describing the screen. Do not paste code.

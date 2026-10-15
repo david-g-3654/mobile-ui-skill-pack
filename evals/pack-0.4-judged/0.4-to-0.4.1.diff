@@ -1,0 +1,157 @@
+diff -ru evals/pack-0.4-judged/skills/mobile-ui/SKILL.md skills/mobile-ui/SKILL.md
+--- evals/pack-0.4-judged/skills/mobile-ui/SKILL.md	2026-10-15 17:22:46
++++ skills/mobile-ui/SKILL.md	2026-10-15 17:21:53
+@@ -3,7 +3,7 @@
+ description: Design and build mobile app screens that look properly designed instead of generic, for SwiftUI, React Native, and Flutter. Use whenever an agent creates, redesigns, reviews, or polishes a mobile screen or component — home/dashboard, feed/list, detail, settings, onboarding, paywall, sign-in, profile, stats, form/checkout, chat, search, sheets, empty/loading/error states — or sets up mobile design tokens, typography, spacing, color, dark mode, or a component library. Triggers on "mobile screen", "iOS screen", "Android screen", "app UI", "make this screen look better", "this looks generic", "design the settings page", SwiftUI, React Native, Expo, Flutter. Always pair with the platform skill (mobile-ui-swiftui, mobile-ui-react-native, mobile-ui-flutter) for code.
+ license: MIT
+ metadata:
+-  version: "0.4"
++  version: "0.4.1"
+ ---
+ 
+ # Mobile UI
+diff -ru evals/pack-0.4-judged/skills/mobile-ui/references/copy.md skills/mobile-ui/references/copy.md
+--- evals/pack-0.4-judged/skills/mobile-ui/references/copy.md	2026-10-15 17:22:46
++++ skills/mobile-ui/references/copy.md	2026-10-15 17:21:29
+@@ -43,7 +43,7 @@
+ ## Sample data rules (for previews, mocks, seeds)
+ 
+ 1. **Names:** diverse, realistic, varied length — "Amara Okafor", "Lucas Wei", "Sofía Ramírez-Castillo", "Theo". Never John Doe / Jane Smith / User 1.
+-2. **Money:** uneven, plausible values — `$1,284.06`, `€12.40`, `−$38.99`. Include one large and one tiny value. **One format per screen**: format every amount with the same formatter (SwiftUI `.formatted(.currency(code: "USD"))`, `Intl.NumberFormat`, `NumberFormat.currency`) — mixing a hand-typed `$` with a locale-formatted `US$` on one screen looks broken (eval finding).
++2. **Money:** uneven, plausible values — `$1,284.06`, `€12.40`, `−$38.99`. Include one large and one tiny value. **One format per screen**: format every amount with the same formatter (SwiftUI `.formatted(.currency(code: "USD"))`, `Intl.NumberFormat`, `NumberFormat.currency`) — mixing a hand-typed `$` with a locale-formatted `US$` on one screen looks broken (eval finding). Need the symbol separately for a hero number? SwiftUI and Flutter can format the parts; **React Native must split `format()`'s string**, because `formatToParts` doesn't exist in Hermes on iOS and the screen crashes (see `mobile-ui-react-native` → Money and numbers on Hermes; eval finding, 0.4).
+ 3. **Dates:** relative to today — "Today, 9:41", "Yesterday", "Mon", "Sep 3".
+ 4. **Text length:** include one long title that wraps, one short, one item with a missing optional field (no avatar, no subtitle).
+ 5. **Counts:** realistic — 3 unread, 128 followers, 2.4K plays — not all zeros, not all round numbers.
+diff -ru evals/pack-0.4-judged/skills/mobile-ui/references/lint.md skills/mobile-ui/references/lint.md
+--- evals/pack-0.4-judged/skills/mobile-ui/references/lint.md	2026-10-15 17:22:46
++++ skills/mobile-ui/references/lint.md	2026-10-15 17:21:29
+@@ -36,6 +36,7 @@
+ | MU114 | warning | `TextInput` with placeholder and no visible label | Label above the field |
+ | MU116 | warning | Bare `.fixedSize()` (SwiftUI) — widens the screen at accessibility sizes | `.fixedSize(horizontal: false, vertical: true)` |
+ | MU117 | warning | Mixed money formats in one file (`"$12"` next to a currency formatter or `US$`) | One formatter per screen |
++| MU118 | error / warning | React Native: `Intl` APIs Hermes on iOS doesn't have (`NumberFormat#formatToParts`, `formatRange`, `Intl.RelativeTimeFormat`/`PluralRules`/`ListFormat`/`DisplayNames`/`Segmenter`/`Locale`/`DurationFormat`) or gets wrong (`style: 'unit'` converts km to miles) — error; `notation: 'compact'`, `signDisplay` are ignored, and an untyped `.formatToParts` might be a NumberFormat — warning | `format()` + string ops (`mobile-ui-react-native` → Money and numbers on Hermes) |
+ | MU115 | warning | Bottom bar with a button overlaid on content (`.overlay(alignment: .bottom)`, `ZStack(alignment: .bottom)`, absolute `bottom: 0`, `Positioned(bottom: 0)`) | Inset the content; pin with the pack's bottom action bar |
+ 
+ ## How agents should use it
+diff -ru evals/pack-0.4-judged/skills/mobile-ui/scripts/mobile_ui_lint.py skills/mobile-ui/scripts/mobile_ui_lint.py
+--- evals/pack-0.4-judged/skills/mobile-ui/scripts/mobile_ui_lint.py	2026-10-15 17:22:46
++++ skills/mobile-ui/scripts/mobile_ui_lint.py	2026-10-15 17:21:29
+@@ -187,7 +187,7 @@
+             if hand_typed and formatted:
+                 ln = joined[:hand_typed.start()].count("\n") + 1
+                 self.add(f, ln, "MU117", "warning", "Mixed money formats in one screen (hand-typed \"$12\" alongside a currency formatter / \"US$\").",
+-                         "Format every amount with the same formatter (copy.md: one format per screen).")
++                         "Format every amount with the same formatter (copy.md: one format per screen). React Native: split format()'s string for a separate symbol — never formatToParts (Hermes).")
+         if len(bold_lines) > 3:
+             self.add(f, bold_lines[3], "MU102", "warning", f"{len(bold_lines)} bold/heavy weights in one file — flat, shouty hierarchy.",
+                      "Two weights: semibold for titles, regular for the rest; bold only for large titles.")
+@@ -267,6 +267,38 @@
+                     if "<Text" not in prev and "<Txt" not in prev:
+                         self.add(f, i, "MU114", "warning", "TextInput with a placeholder but no visible label.",
+                                  "Put a label above the field; placeholders are examples, not labels.")
++        self._lint_hermes_intl(f, code)
++
++    # Intl on Hermes (iOS, Expo SDK 57), probed on device: these are undefined, so calling them
++    # throws at runtime even though TypeScript accepts them. DateTimeFormat.formatToParts exists;
++    # NumberFormat.formatToParts does not.
++    HERMES_MISSING = re.compile(r"\bIntl\.(PluralRules|RelativeTimeFormat|ListFormat|DisplayNames|Segmenter|Locale|DurationFormat|supportedValuesOf)\b|\.formatRange(ToParts)?\(")
++
++    def _lint_hermes_intl(self, f, code):
++        joined = "\n".join(code)
++        nf_names = set(re.findall(r"(\w+)\s*=\s*new\s+Intl\.NumberFormat\b", joined))
++        dtf_names = set(re.findall(r"(\w+)\s*=\s*new\s+Intl\.DateTimeFormat\b", joined))
++        uses_nf = "Intl.NumberFormat" in joined or "toLocaleString(" in joined
++        fix = "Use format() and split the string (mobile-ui-react-native SKILL.md → Money and numbers on Hermes)."
++        for i, line in enumerate(code, 1):
++            m = self.HERMES_MISSING.search(line)
++            if m:
++                self.add(f, i, "MU118", "error", f"`{m.group(0).rstrip('(')}` doesn't exist in Hermes on iOS — the screen crashes when it runs.", fix)
++            for m in re.finditer(r"(\w+|\))\s*\.formatToParts\(", line):
++                recv = m.group(1)
++                if recv in dtf_names:
++                    continue
++                inline_nf = recv == ")" and "NumberFormat" in line[: m.start()]
++                if recv in nf_names or inline_nf:
++                    self.add(f, i, "MU118", "error", "`NumberFormat.formatToParts` doesn't exist in Hermes on iOS — the screen crashes when it runs.", fix)
++                elif not (recv == ")" and "DateTimeFormat" in line[: m.start()]):
++                    self.add(f, i, "MU118", "warning", "`formatToParts` only exists on DateTimeFormat in Hermes on iOS; on a NumberFormat it crashes.", fix)
++            if uses_nf and re.search(r"style:\s*['\"]unit['\"]", line):
++                self.add(f, i, "MU118", "error", "NumberFormat `style: 'unit'` on Hermes (iOS) converts to the device's units — 21.6 km renders as \"13.422mi\".",
++                         "Format the number, then append the unit yourself: `${n.toFixed(1)} km`.")
++            if uses_nf and re.search(r"notation:\s*['\"]compact['\"]|signDisplay:", line):
++                self.add(f, i, "MU118", "warning", "Hermes (iOS) ignores `notation: 'compact'` and `signDisplay` — 12,345 stays \"12,345\", +5 shows \"5\".",
++                         "Build compact values and signs yourself (e.g. `${(n / 1000).toFixed(1)}K`, `n > 0 ? '+' : ''`).")
+ 
+     # ── Flutter ─────────────────────────────────────────────────────
+     def _lint_flutter(self, f, lines, code, is_tokens):
+diff -ru evals/pack-0.4-judged/skills/mobile-ui-flutter/SKILL.md skills/mobile-ui-flutter/SKILL.md
+--- evals/pack-0.4-judged/skills/mobile-ui-flutter/SKILL.md	2026-10-15 17:22:46
++++ skills/mobile-ui-flutter/SKILL.md	2026-10-15 17:21:53
+@@ -3,7 +3,7 @@
+ description: Build properly designed Flutter screens using the mobile-ui system — a Quiet ThemeExtension of color roles on Material 3, platform-adaptive behavior (Cupertino transitions, Switch.adaptive, adaptive dialogs, SF on iOS / Roboto on Android), large collapsing app bars on a canvas, inset-grouped sections, ink stadium primary buttons in a safe-area bottom bar, hero metrics, skeletons, and designed dark mode. Use when writing or restyling any Flutter widget, screen, or ThemeData, or when a Flutter app "looks like default Material", "looks generic", or needs tokens. Load mobile-ui first for the screen archetype and taste gate.
+ license: MIT
+ metadata:
+-  version: "0.4"
++  version: "0.4.1"
+ ---
+ 
+ # Mobile UI — Flutter
+diff -ru evals/pack-0.4-judged/skills/mobile-ui-react-native/SKILL.md skills/mobile-ui-react-native/SKILL.md
+--- evals/pack-0.4-judged/skills/mobile-ui-react-native/SKILL.md	2026-10-15 17:22:46
++++ skills/mobile-ui-react-native/SKILL.md	2026-10-15 17:21:53
+@@ -3,7 +3,7 @@
+ description: Build properly designed React Native / Expo screens using the mobile-ui system — native-stack headers with large titles, inset-grouped sections on a canvas, ink capsule primary buttons pinned in a safe-area bottom bar, hero metrics, platform-correct typography, haptics, skeletons, and designed dark mode. Use when writing or restyling any React Native, Expo, or Expo Router screen or component, when an RN app "looks generic", "looks like a web page", or needs a theme/tokens file. Load mobile-ui first for the screen archetype and taste gate.
+ license: MIT
+ metadata:
+-  version: "0.4"
++  version: "0.4.1"
+ ---
+ 
+ # Mobile UI — React Native / Expo
+@@ -66,6 +66,34 @@
+ | `react-native-linear-gradient` on buttons | Solid `primaryFill` |
+ | Emoji in `Text` as icons ("⚙️ Settings") | Ionicons glyph or none |
+ | `Dimensions.get('window')` for layout | Flexbox; `useWindowDimensions` only when necessary |
++| `Intl.NumberFormat(...).formatToParts()`, `formatRange`, `Intl.RelativeTimeFormat` / `PluralRules` / `ListFormat` | `format()` + string ops (below). These typecheck but **don't exist in Hermes on iOS: the screen crashes** (lint MU118) |
++
++### Money and numbers on Hermes
++
++Hermes (React Native's engine) has only part of `Intl` on iOS. Checked on device with Expo SDK 57:
++
++- **Safe:** `new Intl.NumberFormat(locale, { style: 'currency' | 'decimal' | 'percent' }).format(n)`, `toLocaleString`, `Intl.DateTimeFormat#format` and `#formatToParts`, `toLocaleDateString`, `localeCompare`.
++- **Missing (throws):** `NumberFormat#formatToParts`, `formatRange`, `formatRangeToParts`, `Intl.PluralRules`, `RelativeTimeFormat`, `ListFormat`, `DisplayNames`, `Segmenter`, `Locale`, `DurationFormat`, `supportedValuesOf`.
++- **Silently wrong:** `style: 'unit'` converts to the device's units (21.6 km renders as "13.422mi"). `notation: 'compact'` and `signDisplay` are ignored.
++
++To give `QHeroMetric` a smaller currency symbol from the same formatter as every other amount (copy.md: one format per screen), split the formatted string instead of calling `formatToParts`. This works for symbols before or after the number (`$1,284.06`, `1.284,06 €`, `RM 1,284.06`):
++
++```tsx
++const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
++
++function moneyParts(n: number) {
++  const s = money.format(n);
++  const first = s.search(/\d/);
++  let last = s.length;
++  while (last > first && !/\d/.test(s[last - 1])) last--;
++  return { prefix: s.slice(0, first), value: s.slice(first, last), suffix: s.slice(last) };
++}
++
++const spent = moneyParts(2184.37);
++<QHeroMetric label="Spent in October" prefix={spent.prefix} value={spent.value} suffix={spent.suffix} />
++```
++
++Units: format the number, then add the unit yourself (`${km.toFixed(1)} km`).
+ 
+ ## 3. Verify
+ 
+diff -ru evals/pack-0.4-judged/skills/mobile-ui-swiftui/SKILL.md skills/mobile-ui-swiftui/SKILL.md
+--- evals/pack-0.4-judged/skills/mobile-ui-swiftui/SKILL.md	2026-10-15 17:22:46
++++ skills/mobile-ui-swiftui/SKILL.md	2026-10-15 17:21:53
+@@ -3,7 +3,7 @@
+ description: Build properly designed iOS screens in SwiftUI using the mobile-ui system — native NavigationStack, inset-grouped Lists on a canvas, ink primary buttons, hero metrics, Dynamic Type, SF Symbols, sheets with detents, haptics, and dark mode. Use when writing or restyling any SwiftUI view, screen, or component, or when an iOS app "looks generic", "looks like a default template", or needs a design system (DesignSystem.swift, tokens, ButtonStyles). Load mobile-ui first for the screen archetype and taste gate.
+ license: MIT
+ metadata:
+-  version: "0.4"
++  version: "0.4.1"
+ ---
+ 
+ # Mobile UI — SwiftUI

@@ -1,0 +1,12 @@
+Timestamp               Ty Process[PID:TID]
+2026-10-15 11:56:39.676 E  EvalRN[34463:14ddf75] [com.facebook.react.log:native] Unhandled JS Exception: TypeError: undefined is not a function
+
+This error is located at:
+    at TransactionsScreen (/Users/User/Library/Developer/Xcode/DerivedData/EvalRN-awaqyxaefjemvecpmasbbxlcfeqq/Build/Products/Release-iphonesimulator/main.jsbundle:151716:36)
+    at Index (<anonymous>)
+    at WrappedScreenComponent (/Users/User/Library/Developer/Xcode/DerivedData/EvalRN-awaqyxaefjemvecpmasbbxlcfeqq/Build/Products/Release-iphonesimulator/main.jsbundle:76614:49)
+    at Suspense (<anonymous>)
+    at ZoomTransitionTargetContextProvider (/Users/User/Library/Developer/Xcode/DerivedData/EvalRN-awaqyxaefjemvecpmasbbxlcfeqq/Build/Products/Release-iphonesimulator/main.jsbundle:77217:3)
+    at Route (/Users/User/Library/Developer/Xcode/DerivedData/EvalRN-awaqyxaefjemvecpmasbbxlcfeqq/Build/Products/Release-iphonesimulator/main.jsbundle:59404:3)
+    at BaseRoute (/Users/User/Library/Developer/Xcode/DerivedData/EvalRN-awaqyxaefjemvecpmasbbxlcfeqq/Build/Products/Release-iphonesimulator/main.jsbundle:76619:5)
+ <…>

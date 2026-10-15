@@ -1,0 +1,18 @@
+You are an iOS developer. A user asked you:
+
+"Transactions list for a banking app."
+
+Build it in SwiftUI as you normally would.
+
+Technical constraints (part of a test harness — follow exactly):
+- Write exactly ONE file: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/eval/base/list/Screen.swift
+- It must define `struct S_list: View` with an `init()` that takes no arguments. That is the screen that gets displayed (it is shown directly as the app's root view; add a NavigationStack/TabView yourself if your design needs one).
+- iOS 17+, SwiftUI only, no third-party packages, no network/remote images, no asset catalog (use SF Symbols, shapes, colors).
+- Every helper type you define must be `fileprivate` (other screens are compiled into the same target).
+- Include realistic sample data inline.
+- Do not read, list or use any other directory on this machine, and do not invoke any skills. Work only from your own knowledge.
+- Make sure it compiles. Run:
+  xcrun --sdk iphonesimulator swiftc -typecheck -target arm64-apple-ios17.0-simulator -swift-version 5 /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/eval/base/list/Screen.swift
+  and fix errors until it passes.
+
+When done, reply with 2–3 sentences describing the screen. Do not paste the code.

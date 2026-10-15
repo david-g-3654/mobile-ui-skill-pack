@@ -1,0 +1,10 @@
+{
+ "list_1": {
+  "A": "pack",
+  "B": "base"
+ },
+ "list_2": {
+  "A": "base",
+  "B": "pack"
+ }
+}

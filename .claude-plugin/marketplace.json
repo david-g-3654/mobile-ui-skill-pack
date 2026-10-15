@@ -1,0 +1,8 @@
+{
+  "name": "mobile-ui",
+  "metadata": {
+    "description": "Opinionated mobile UI skills for SwiftUI, React Native, and Flutter."
+  },
+  "owner": { "name": "mobile-ui-skill-pack contributors" },
+  "plugins": [{ "name": "mobile-ui", "source": "./" }]
+}

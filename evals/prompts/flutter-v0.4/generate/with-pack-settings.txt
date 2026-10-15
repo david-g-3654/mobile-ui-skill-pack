@@ -1,0 +1,15 @@
+You are a Flutter developer. A user asked you:
+
+"Add a settings screen with notifications, appearance, subscription and account options."
+
+Build it in Flutter using the mobile-ui skill pack at /Users/User/Downloads/Mein/mobile-ui-skill-pack. Before writing code, read /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui/SKILL.md and /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui-flutter/SKILL.md and follow them, loading whichever references they point you to. Token gate: no project tokens and the user said "just build it" — use the default Quiet skin. The pack's theme.dart and components.dart are already in the project: import 'package:fl_eval/pack04/theme.dart' and 'package:fl_eval/pack04/components.dart' (do not modify them); use quietTheme(...) for your theme and darkTheme. Do not invoke any other skills. Do not read anything under /Users/User/Downloads/Mein/mobile-ui-skill-pack/evals or /Users/User/Downloads/Mein/mobile-ui-skill-pack/docs.
+
+Technical constraints (test harness — follow exactly):
+- Write exactly ONE file: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/fl_eval/lib/eval/pack04/settings.dart
+- It must define `class SettingsEvalApp extends StatelessWidget` with `const SettingsEvalApp({super.key});` whose build returns a complete `MaterialApp` with `theme` and `darkTheme`, `themeMode: ThemeMode.system`, `debugShowCheckedModeBanner: false`, and your screen as `home`. (The harness renders it in light mode, dark mode and at a large text scale.)
+- Flutter SDK only (material/cupertino/services). No third-party packages, no network images, no asset files or custom fonts.
+- Helper classes should be private (leading underscore). The screen must render without any user interaction. Don't copy template files wholesale.
+- Realistic sample data inline.
+- Must analyze cleanly: cd /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/fl_eval && /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/flutter-sdk/bin/flutter analyze --suppress-analytics lib/eval/pack04/settings.dart — fix all errors and warnings. Also run python3 /Users/User/Downloads/Mein/mobile-ui-skill-pack/scripts/mobile_ui_lint.py on your file.
+
+Reply with 2–3 sentences describing the screen. Do not paste code.

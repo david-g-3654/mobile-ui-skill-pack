@@ -1,0 +1,11 @@
+wins {'pack': 14, 'base': 2, 'tie': 0} of 16 | A chosen 8
+per prompt: {'detail': ['pack', 'pack'], 'settings': ['pack', 'pack'], 'paywall': ['pack', 'pack'], 'home': ['pack', 'pack'], 'onboarding': ['pack', 'pack'], 'stats': ['pack', 'pack'], 'list': ['pack', 'pack'], 'auth': ['base', 'base']}
+mean overall pack 3.95 base 3.27
+  focal         4.12 / 3.38
+  restraint     4.81 / 2.69
+  typography    4.06 / 3.06
+  spacing       3.81 / 3.50
+  platform_fit  3.75 / 3.12
+  dark_mode     3.69 / 3.81
+  accessibility 2.81 / 2.50
+  content       4.50 / 4.06

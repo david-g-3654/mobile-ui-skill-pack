@@ -1,0 +1,8 @@
+{
+  "name": "mobile-ui",
+  "description": "Opinionated skills + component reference so agents build mobile screens that look properly designed, not generic — SwiftUI, React Native/Expo, and Flutter. 14 screen archetypes, a Quiet token skin, 24 components per platform, a taste gate, and a lint for generic-UI tells.",
+  "version": "0.4.1",
+  "author": { "name": "mobile-ui-skill-pack contributors" },
+  "license": "MIT",
+  "keywords": ["mobile", "ui", "design-system", "swiftui", "react-native", "expo", "flutter", "ios", "android", "components", "design-tokens"]
+}

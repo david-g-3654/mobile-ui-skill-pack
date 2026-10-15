@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "EvalRN",
+    "slug": "evalrn",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.mobileui.evalrn"
+    },
+    "android": {
+      "predictiveBackGestureEnabled": false,
+      "package": "dev.mobileui.evalrn"
+    },
+    "web": {},
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "enableSceneSupport": true
+          }
+        }
+      ]
+    ],
+    "scheme": "mobileuieval"
+  }
+}

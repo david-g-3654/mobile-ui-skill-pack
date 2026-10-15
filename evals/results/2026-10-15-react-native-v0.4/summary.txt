@@ -1,0 +1,12 @@
+judgments: 16 (8 prompts x 2 orderings) | pack 14, base 2, tie 0 | position A chosen 8
+prompts won in both orderings: pack 7, base 1, split 0 | one-sided sign test p = 0.0352
+per prompt: {'home': ['pack', 'pack'], 'settings': ['pack', 'pack'], 'paywall': ['pack', 'pack'], 'onboarding': ['pack', 'pack'], 'detail': ['pack', 'pack'], 'list': ['base', 'base'], 'stats': ['pack', 'pack'], 'auth': ['pack', 'pack']}
+mean overall (1-5): pack 3.67 base 3.15
+  focal         3.62 / 3.56
+  restraint     4.25 / 2.81
+  typography    3.62 / 3.56
+  spacing       3.50 / 3.56
+  platform_fit  3.69 / 3.06
+  dark_mode     3.62 / 2.75
+  accessibility 3.06 / 1.56
+  content       4.00 / 4.31

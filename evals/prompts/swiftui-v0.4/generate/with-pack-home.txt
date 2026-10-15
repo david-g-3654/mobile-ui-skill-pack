@@ -1,0 +1,15 @@
+You are an iOS developer. A user asked you:
+
+"Build the home screen for a personal budgeting app."
+
+Build it in SwiftUI using the mobile-ui skill pack at /Users/User/Downloads/Mein/mobile-ui-skill-pack. Before writing code, read /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui/SKILL.md and /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui-swiftui/SKILL.md and follow them, loading whichever references they point you to. Token gate: the project has no tokens and the user said "just build it" — use the default Quiet skin. You may use the types in skills/mobile-ui-swiftui/assets/DesignSystem.swift and Components.swift (compiled into the same target). Do not invoke any other skills. Do not read anything under /Users/User/Downloads/Mein/mobile-ui-skill-pack/evals or /Users/User/Downloads/Mein/mobile-ui-skill-pack/docs.
+
+Technical constraints (test harness — follow exactly):
+- Write exactly ONE file: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/eval_v04/pack/home/Screen.swift
+- It must define `struct S_home: View` with an `init()` taking no arguments; it is shown directly as the app's root view (add NavigationStack/TabView yourself if needed).
+- iOS 17+, SwiftUI only (Swift Charts / AuthenticationServices allowed), no third-party packages, no remote images, no asset catalog.
+- Every helper type must be `fileprivate`. Don't modify the pack's files; don't copy template files wholesale with their original type names.
+- Realistic sample data inline.
+- Must compile: xcrun --sdk iphonesimulator swiftc -typecheck -target arm64-apple-ios17.0-simulator -swift-version 5 /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui-swiftui/assets/DesignSystem.swift /Users/User/Downloads/Mein/mobile-ui-skill-pack/skills/mobile-ui-swiftui/assets/Components.swift /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/eval_v04/pack/home/Screen.swift — fix until it passes. Also run python3 /Users/User/Downloads/Mein/mobile-ui-skill-pack/scripts/mobile_ui_lint.py on your file.
+
+Reply with 2–3 sentences describing the screen. Do not paste code.
