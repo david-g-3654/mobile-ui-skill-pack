@@ -10,6 +10,6 @@ Technical constraints (test harness — follow exactly):
 - Flutter SDK only (material/cupertino/services). No third-party packages, no network images, no asset files or custom fonts.
 - Helper classes should be private (leading underscore). The screen must render without any user interaction. Don't copy template files wholesale.
 - Realistic sample data inline.
-- Must analyze cleanly: cd /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/fl_eval && /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/flutter-sdk/bin/flutter analyze --suppress-analytics lib/eval/pack04/detail.dart — fix all errors and warnings. Also run python3 /Users/User/Downloads/Mein/mobile-ui-skill-pack/scripts/mobile_ui_lint.py on your file.
+- Must analyze cleanly: cd /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/fl_eval && /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/flutter-sdk/bin/flutter analyze --suppress-analytics lib/eval/codex_pack/detail.dart — fix all errors and warnings. Also run python3 /Users/User/Downloads/Mein/mobile-ui-skill-pack/scripts/mobile_ui_lint.py on your file.
 
 Reply with 2–3 sentences describing the screen. Do not paste code.

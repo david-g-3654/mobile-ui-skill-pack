@@ -44,9 +44,13 @@ Written on 2026-10-15, before any screen for either study was generated. They an
 | Input | SHA-256 |
 |---|---|
 | pack 0.4.1 (every file under skills/) | `d2797ab88672420f39a83b882de732d543d8d9da7d2d26f92959cbef92c067dd` |
-| generic-arm generator prompts (24) | `3c930be619d427c4afe9f66b9314b8d3953d4fd327bf897105efe9bf97be6809` |
-| Codex generator prompts (48) | `ccefc74f6c89ce340626b59b6e2a8634a393701ae3ccf55a8c61621d0181c353` |
+| generic-arm generator prompts (24) | `304020242da6e5a841d95bdcf38e4baf0d0e85cd4a4ef3c0c9e4c900ff70d7af` |
+| Codex generator prompts (48) | `fb4a25eb9ad30fd438467cdeacbb89ec7fec137d1abf97e09384bc6a1f0efc37` |
 | rubric | `5c39dc33967ab36a1bf3f33a9e54cb40d91837079b1157388e02689e611f264b` |
 | Claude judge prompt template | `6b419fa46a765f0c5c03e9d69201eaf404bf2ca6f437b301e029e4efbc39366b` |
 | external judge script | `6c9cb5d8c30aa5c36afc31b83fc1082d3d8f3f5d20aa8c0b72119057b3910421` |
 | scoring script | `13d4408801c95ae47d1baed3e9130c0eaecb515c956a6bbe890c912e220f214d` |
+
+## Correction, committed before any screen was generated
+
+The first version of this file (commit `5e076ee`) contained a path bug in 24 of the 72 generator prompts. In every Flutter prompt (8 generic, 16 Codex), the "Must analyze cleanly" command still pointed at the old file (`lib/eval/base/<id>.dart` or `lib/eval/pack04/<id>.dart`), not the file the agent writes, because the path rewrite only matched paths with a leading slash. An agent following it would have checked the wrong file. Only that one path in those 24 files changed. The fingerprints above are the corrected ones; the originals were generic `3c930be619d427c4afe9f66b9314b8d3953d4fd327bf897105efe9bf97be6809` and Codex `ccefc74f6c89ce340626b59b6e2a8634a393701ae3ccf55a8c61621d0181c353`. No screen for either study existed when this was fixed.
