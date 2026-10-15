@@ -1,0 +1,11 @@
+# Study B: Codex CLI routed to OpenRouter. No key here; the runner reads OPENROUTER_API_KEY from the environment.
+model = "openai/gpt-6.1-sol"
+model_provider = "openrouter"
+sandbox_mode = "workspace-write"
+approval_policy = "never"
+
+[model_providers.openrouter]
+name = "OpenRouter"
+base_url = "https://openrouter.ai/api/v1"
+env_key = "OPENROUTER_API_KEY"
+wire_api = "responses"

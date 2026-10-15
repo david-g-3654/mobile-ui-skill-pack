@@ -32,6 +32,7 @@ if "--followups" in sys.argv:
         "pack 0.4.1 (every file under skills/)": h([p for p in glob.glob("skills/**/*", recursive=True) if os.path.isfile(p)]),
         "generic-arm generator prompts (24)": h(glob.glob("evals/prompts/*-generic/generate/*.txt")),
         "Codex generator prompts (48)": h(glob.glob("evals/prompts/*-codex/generate/*.txt")),
+        "Study B harness (Codex config + runner)": h(["evals/harness/codex/codex-home/config.toml", "evals/harness/codex/run_study_b.sh"]),
         "rubric": now["rubric"],
         "Claude judge prompt template": now["Claude judge prompt template"],
         "external judge script": now["external judge script"],
