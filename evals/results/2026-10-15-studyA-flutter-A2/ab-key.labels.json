@@ -1,0 +1,66 @@
+{
+ "home_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "home_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "settings_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "settings_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "paywall_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "paywall_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "onboarding_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "onboarding_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "detail_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "detail_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "list_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "list_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "stats_1": {
+  "A": "base",
+  "B": "generic"
+ },
+ "stats_2": {
+  "A": "generic",
+  "B": "base"
+ },
+ "auth_1": {
+  "A": "generic",
+  "B": "base"
+ },
+ "auth_2": {
+  "A": "base",
+  "B": "generic"
+ }
+}

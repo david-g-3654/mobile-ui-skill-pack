@@ -1,0 +1,18 @@
+You are a senior mobile product designer judging two iOS screen implementations. Be critical and specific.
+
+A user asked: "Add a settings screen with notifications, appearance, subscription and account options."
+Two different implementations (A and B) were built and run on an iPhone simulator.
+
+Open ONLY these two files (do not read, list or search anything else on disk):
+1. The comparison image: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/judge_A1_rn/settings_2.png
+   Top row = implementation A, bottom row = implementation B. Columns, left to right: light mode, dark mode, light mode at the largest accessibility text size (AX-XL). Ignore simulator artifacts such as a "◀ AppName" status-bar back label.
+2. The rubric: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/judge_A1_rn/rubric.md
+
+Score each implementation 1–5 on every rubric criterion that is visible in the screenshots (for "States", score only if empty/loading/error states are visible; otherwise null). Use zoom-level scrutiny: hierarchy, restraint, typography, spacing, platform fit, dark mode, behavior at AX-XL, content realism.
+
+Reply with ONLY a JSON object, no prose before or after:
+{"A": {"focal": n, "restraint": n, "typography": n, "spacing": n, "platform_fit": n, "dark_mode": n, "accessibility": n, "content": n, "states": n_or_null},
+ "B": {...same keys...},
+ "preference": "A" | "B" | "tie",
+ "confidence": "low" | "medium" | "high",
+ "reason": "<= 60 words: the decisive differences"}

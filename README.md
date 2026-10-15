@@ -27,7 +27,7 @@ It's modeled on [diagram-design](https://github.com/cathrynlavery/diagram-design
 - **Overall:** a two-of-three majority gives the pack 44 of 48 judgments, and every judge scores the pack higher on average on every platform.
 - **What this doesn't show yet:**
   - **One builder:** every screen was built by Claude Opus 5.5. Whether the pack helps GPT models in Codex, or whatever model a Cursor user picks, is untested.
-  - **No generic baseline:** the comparison is against no design instructions at all, not against a one-line "make it polished" prompt.
+  - **Generic baseline, partly answered:** against a one-line "make it look polished and native, respect large text" prompt, the pack still wins 47/48 under Claude. The one-liner alone mostly fixes large text, not restraint ([Study A](evals/results/2026-10-15-studyA-README.md); GPT and Grok pending).
   - **Possible circularity:** the same author wrote the rubric and the pack.
   - **Looks only:** judges saw screenshots, not code quality.
   - **Small sample:** 8 prompts, one generation per side.
