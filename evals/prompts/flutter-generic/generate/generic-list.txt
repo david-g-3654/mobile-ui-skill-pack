@@ -1,0 +1,16 @@
+You are a Flutter developer. A user asked you:
+
+"Transactions list for a banking app."
+
+Build it in Flutter as you normally would. Make it look polished and native, and respect large text sizes.
+
+Technical constraints (test harness — follow exactly):
+- Write exactly ONE file: /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/fl_eval/lib/eval/generic/list.dart
+- It must define `class ListEvalApp extends StatelessWidget` with `const ListEvalApp({super.key});` whose build returns a complete `MaterialApp` with your own `theme` and `darkTheme`, `themeMode: ThemeMode.system`, `debugShowCheckedModeBanner: false`, and your screen as `home`. (The harness renders it in light mode, dark mode and at a large text scale.)
+- Flutter SDK only (material/cupertino/services). No third-party packages, no network images, no asset files or custom fonts.
+- Helper classes should be private (leading underscore). The screen must render without any user interaction.
+- Realistic sample data inline.
+- Do not read, list or use any other files or folders in this project or elsewhere on this machine (in particular not lib/pack/ or lib/eval/pack/), and do not invoke any skills. Work from your own knowledge.
+- Must analyze cleanly: cd /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/fl_eval && /private/tmp/claude-502/-Users-User-Downloads-Mein-mobile-ui-skill-pack/b6c2193f-51c0-46d6-ba75-345d86512b58/scratchpad/flutter-sdk/bin/flutter analyze --suppress-analytics lib/eval/base/list.dart — fix all errors and warnings.
+
+Reply with 2–3 sentences describing the screen. Do not paste code.

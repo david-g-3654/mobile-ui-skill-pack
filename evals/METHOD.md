@@ -85,9 +85,12 @@ That settles "Claude grading Claude". It doesn't make the result a human judgmen
 
 ## 4. What these results do not show
 
-- **Taste in general:** they show that the pack beats the same model without the pack, under this rubric, on these prompts. That is not a claim about what designers prefer.
-- **Variance across generations:** each arm was generated once per prompt, so a different run could produce better or worse screens on either side.
-- **The rubric is not neutral.** It was written alongside the pack and shares its values, especially "restraint", the criterion with the biggest gap. The pairwise question is less exposed to this bias, and it agrees with the scores.
+- **Other harnesses and models.** Every judged screen was built by Claude Opus 5.5 in Claude Code. The pack *installs* in Codex and Cursor (checked), but whether it *helps* there is untested. Codex runs GPT models, Cursor users choose their own, and other models may follow skills differently. A Codex run is pre-registered: [`PREREGISTRATION-followups.md`](PREREGISTRATION-followups.md), Study B.
+- **No "generic design prompt" baseline.** The comparison is pack against no design instructions at all. A one-line prompt such as "make it look polished and native, respect large text" might get part of the gain, so these results can't say how much comes from the pack's specific rules. A third arm is pre-registered: [`PREREGISTRATION-followups.md`](PREREGISTRATION-followups.md), Study A.
+- **Circularity.** The same author wrote the pack and the rubric, and both value restraint, the criterion with the biggest gap (about +2). The judges may partly be measuring how well agents follow that taste. The plain pairwise question ("which looks like a designer worked on it?") is less exposed, and it agrees with the scores. Judges from three labs don't remove this. Only blind ratings by human designers would, and there are none yet.
+- **Looks only.** Judges saw screenshots. Code quality, maintainability and correctness weren't measured. The pack can introduce bugs as well as fix looks: in 0.4, its money-formatting guidance led to a React Native screen that crashes on Hermes (fixed in 0.4.1).
+- **Small sample.** 8 prompts per platform, one generation per arm. Agent output varies between runs, so a rerun could move results by a prompt or two either way.
+- **Taste in general:** the results show that the pack beats the same model without the pack, under this rubric, on these prompts. That is not a claim about what designers prefer.
 - **Lint counts favour the pack by construction.** Pack agents were told to run the linter.
 - **Android, interaction, and screens beyond the 8 requests** are not covered.
 

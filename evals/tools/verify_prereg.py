@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Re-hash the inputs fingerprinted in evals/PREREGISTRATION-0.4.md and report any that changed.
+"""Re-hash the inputs fingerprinted in a pre-registration and report any that changed.
 
-  python3 evals/tools/verify_prereg.py      (run from the repo root)
+  python3 evals/tools/verify_prereg.py              (0.4 run, PREREGISTRATION-0.4.md)
+  python3 evals/tools/verify_prereg.py --followups  (PREREGISTRATION-followups.md)
+Run from the repo root.
 """
 import glob, hashlib, os, re, sys
 
@@ -25,7 +27,19 @@ now = {
     "external judge script": h(["evals/tools/judge_external.py"]),
     "scoring script": h(["evals/tools/unblind.py"]),
 }
-doc = open("evals/PREREGISTRATION-0.4.md").read()
+if "--followups" in sys.argv:
+    now = {
+        "pack 0.4.1 (every file under skills/)": h([p for p in glob.glob("skills/**/*", recursive=True) if os.path.isfile(p)]),
+        "generic-arm generator prompts (24)": h(glob.glob("evals/prompts/*-generic/generate/*.txt")),
+        "Codex generator prompts (48)": h(glob.glob("evals/prompts/*-codex/generate/*.txt")),
+        "rubric": now["rubric"],
+        "Claude judge prompt template": now["Claude judge prompt template"],
+        "external judge script": now["external judge script"],
+        "scoring script": now["scoring script"],
+    }
+    doc = open("evals/PREREGISTRATION-followups.md").read()
+else:
+    doc = open("evals/PREREGISTRATION-0.4.md").read()
 ok = True
 for name, digest in now.items():
     row = next((l for l in doc.splitlines() if l.startswith("| " + name)), "")

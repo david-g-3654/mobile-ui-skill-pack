@@ -24,7 +24,15 @@ It's modeled on [diagram-design](https://github.com/cathrynlavery/diagram-design
 
 - **React Native** lost one prompt under every judge. The pack-built transactions screen crashes at launch, because it calls `Intl.NumberFormat.formatToParts`, which Hermes doesn't implement. The pack's money rule led agents there. **0.4.1 fixes it** with Hermes-safe guidance and lint rule MU118, and changes nothing else. Regenerated on 0.4.1, the same prompt went to the pack in 6 of 6 judgments across all three judges ([follow-up](evals/results/2026-10-15-react-native-v0.4.1-list/README.md); one prompt, not a new eval).
 - **Flutter is the weak spot.** Grok prefers the Material baseline on auth and splits three other prompts, mostly over large-text clipping and dark mode.
-- **Overall:** a two-of-three majority gives the pack 44 of 48 judgments, and every judge scores the pack higher on average on every platform. No human designers have rated yet. [How it was measured, and what it can't tell you →](evals/METHOD.md)
+- **Overall:** a two-of-three majority gives the pack 44 of 48 judgments, and every judge scores the pack higher on average on every platform.
+- **What this doesn't show yet:**
+  - **One builder:** every screen was built by Claude Opus 5.5. Whether the pack helps GPT models in Codex, or whatever model a Cursor user picks, is untested.
+  - **No generic baseline:** the comparison is against no design instructions at all, not against a one-line "make it polished" prompt.
+  - **Possible circularity:** the same author wrote the rubric and the pack.
+  - **Looks only:** judges saw screenshots, not code quality.
+  - **Small sample:** 8 prompts, one generation per side.
+  - **No human raters yet.**
+  - **Coming next:** a Codex run and a generic-prompt baseline, both [pre-registered](evals/PREREGISTRATION-followups.md). [How it was measured, and what it can't tell you →](evals/METHOD.md)
 
 The pack's own templates: [SwiftUI](docs/previews/overview.png) · [React Native](docs/previews/overview-react-native.png) · [Flutter](docs/previews/overview-flutter.png) on iOS, and [React Native and Flutter on Android](docs/previews/overview-android.png).
 
