@@ -32,41 +32,43 @@ The pack's own templates: [SwiftUI](docs/previews/overview.png) · [React Native
 
 ```
 skills/
-  mobile-ui/                    core: decides WHAT the screen is and HOW it should look
-    SKILL.md                    philosophy · token gate · archetype router · anti-patterns · budget · taste gate
+  mobile-ui/                  core: WHAT the screen is, HOW it should look
+    SKILL.md                  philosophy, token gate, archetype router,
+                              anti-patterns, budget, taste gate
     references/
-      style-guide.md            "Quiet" skin: color roles (contrast-verified), type ramp, spacing, shape, elevation
-      onboarding.md             mapping a brand / existing tokens onto the roles
-      components.md             24 components, platform-neutral: anatomy, spec, states, rules
-      anti-patterns.md          46 generic tells → fixes (10 found in evals)
-      layout-budget.md          frames, rhythm, heights, per-archetype budgets
-      copy.md · motion-and-feedback.md · accessibility.md · lint.md
-    scripts/mobile_ui_lint.py   22 rules for generic-UI tells across .swift/.tsx/.dart (ships with the skill)
-      screen-*.md               14 archetypes: home, list, detail, settings, onboarding, paywall,
-                                auth, profile, stats, form, chat, search, sheet, states
-  mobile-ui-swiftui/            HOW in SwiftUI (iOS 17+, Swift 6)
-    SKILL.md · references/components.md
-    assets/DesignSystem.swift · Components.swift · templates/{Home,Settings,Paywall}Screen.swift
-  mobile-ui-react-native/       HOW in React Native / Expo (SDK 52+, Expo Router)
-    SKILL.md · references/components.md
-    assets/theme.ts · components.tsx · templates/_layout.tsx · {Home,Settings,Paywall}Screen.tsx
-  mobile-ui-flutter/            HOW in Flutter (3.35+, Material 3, platform-adaptive)
-    SKILL.md · references/components.md
-    assets/theme.dart · components.dart · templates/{home,settings,paywall}_screen.dart
+      style-guide.md          "Quiet" skin: color roles, type ramp, spacing
+      onboarding.md           map a brand / existing tokens onto the roles
+      components.md           24 components: anatomy, spec, states, rules
+      anti-patterns.md        46 generic tells → fixes (10 found in evals)
+      layout-budget.md        frames, rhythm, heights, per-archetype budgets
+      copy.md                 sample data, money, labels, empty states
+      motion-and-feedback.md  haptics, transitions, toasts
+      accessibility.md        contrast, Dynamic Type, touch targets
+      lint.md                 what each lint rule catches
+      screen-*.md             14 archetypes: home, list, detail, settings,
+                              onboarding, paywall, auth, profile, stats,
+                              form, chat, search, sheet, states
+    scripts/mobile_ui_lint.py 22 rules for generic-UI tells (.swift/.tsx/.dart)
+  mobile-ui-swiftui/          HOW in SwiftUI (iOS 17+, Swift 6)
+    SKILL.md, references/components.md
+    assets/                   DesignSystem.swift, Components.swift, templates/
+  mobile-ui-react-native/     HOW in React Native / Expo (Expo Router)
+    SKILL.md, references/components.md
+    assets/                   theme.ts, components.tsx, templates/
+  mobile-ui-flutter/          HOW in Flutter (3.35+, Material 3, adaptive)
+    SKILL.md, references/components.md
+    assets/                   theme.dart, components.dart, templates/
 scripts/
-  mobile_ui_lint.py             shim → skills/mobile-ui/scripts/mobile_ui_lint.py
-  migrate_to_0_4.py             rename your app's uses of the pack API to 0.4's Q-prefixed names
-  android_preview.sh            run the RN (Expo Go) or Flutter templates on an Android emulator/device, screenshot
-                                light / dark / font scale 2.0
-  gallery.py                    compose the before/after gallery images from eval screenshots
-  ios_preview.sh                build the SwiftUI templates, run on the booted simulator, screenshot
-                                light / dark / accessibility-XL
-  rn_preview.sh                 scaffold an Expo app, install the RN templates, run in Expo Go on the
-                                booted simulator, screenshot light / dark / accessibility-XL
-  tests/                        lint tests + "typical agent output" fixtures per platform
-evals/                          METHOD.md, every prompt verbatim, rubric, scores, results per run, judge/tally tools
-docs/gallery/                   before/after images: hero, per platform, all 8 prompts per platform
-docs/previews/                  rendered template screenshots
+  mobile_ui_lint.py           shim → skills/mobile-ui/scripts/mobile_ui_lint.py
+  migrate_to_0_4.py           rename your code to 0.4's Q-prefixed API
+  ios_preview.sh              SwiftUI templates on the simulator, screenshots
+  rn_preview.sh               RN templates in Expo Go on the simulator
+  android_preview.sh          RN / Flutter templates on an Android emulator
+  gallery.py                  build the before/after gallery images
+  tests/                      lint tests + "typical agent output" fixtures
+evals/                        method, every prompt, rubric, scores, results
+docs/gallery/                 before/after images (hero, per platform)
+docs/previews/                rendered template screenshots
 ```
 
 ## How an agent uses it
