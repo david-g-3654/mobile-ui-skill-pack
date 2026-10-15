@@ -15,6 +15,7 @@ v0.1 (this repo) is feature-complete in *content*: the core skill, 14 archetypes
 - [ ] Flutter at large text and in dark mode: auth's dark secondary buttons, content hidden under pinned footers at AX-XL (Grok's 0.4 reasons).
 - [x] Catch Intl APIs that Hermes lacks: lint MU118 and the React Native skill (0.4.1).
 - [ ] Judge React Native again on the next version.
+- [ ] Large text with pinned footers. Study A's strictest judge preferred a one-line "respect large text" prompt over the pack on 8 of 48 judgments, nearly all because the pack screen broke at AX-XL: a pinned footer covering content, a floating search bar over rows, a clipped chart. Collapse or unpin bottom bars and floating controls at accessibility sizes, and add an AX-XL check to the templates.
 - [ ] Non-text contrast. The style guide verifies text only. In dark mode a `surface2` button on `canvas` is 1.32:1, and in light mode 1.07:1; hairlines are 1.24–1.30:1. Grok saw dark secondary buttons "nearly vanish". `QSecondaryButton` uses this fill. Target ≥ 3:1 for edges that identify a control (WCAG 1.4.11): a stronger fill or a border. Add these pairs to the verified table and to a test.
 - [x] API prefix (`Q…`) on all platforms, with a test that blocks unprefixed symbols and a migration script (0.4).
 - [x] Gallery from release builds, with the hero rebuilt fresh on 0.4.
