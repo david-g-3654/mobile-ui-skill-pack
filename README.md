@@ -26,13 +26,13 @@ It's modeled on [diagram-design](https://github.com/cathrynlavery/diagram-design
 - **Flutter is the weak spot.** Grok prefers the Material baseline on auth and splits three other prompts, mostly over large-text clipping and dark mode.
 - **Overall:** a two-of-three majority gives the pack 44 of 48 judgments, and every judge scores the pack higher on average on every platform.
 - **What this doesn't show yet:**
-  - **One builder:** every screen was built by Claude Opus 5.5. Whether the pack helps GPT models in Codex, or whatever model a Cursor user picks, is untested.
+  - **Another builder, partly answered:** with Codex running GPT-6.1 Sol as the builder, the pack wins 44/48 (Claude), 45/48 (GPT) and 43/48 (Grok) judgments. Much of the SwiftUI and React Native gap is GPT's no-pack screens skipping dark mode and large text. The pack still leads on the other criteria, and on Flutter, where both arms have dark mode, it wins more narrowly ([Study B](evals/results/2026-10-16-studyB-README.md)). Cursor and other models are untested.
   - **Generic baseline, partly answered:** against a one-line "make it look polished and native, respect large text" prompt, the pack still wins 47/48 (Claude), 47/48 (GPT) and 40/48 (Grok) judgments. The one-liner alone mostly fixes large text, not restraint, and where it beats the pack it is on large text ([Study A](evals/results/2026-10-15-studyA-README.md)).
   - **Possible circularity:** the same author wrote the rubric and the pack.
   - **Looks only:** judges saw screenshots, not code quality.
   - **Small sample:** 8 prompts, one generation per side.
   - **No human raters yet.**
-  - **Coming next:** a Codex run and a generic-prompt baseline, both [pre-registered](evals/PREREGISTRATION-followups.md). [How it was measured, and what it can't tell you →](evals/METHOD.md)
+  - [How it was measured, and what it can't tell you →](evals/METHOD.md)
 
 The pack's own templates: [SwiftUI](docs/previews/overview.png) · [React Native](docs/previews/overview-react-native.png) · [Flutter](docs/previews/overview-flutter.png) on iOS, and [React Native and Flutter on Android](docs/previews/overview-android.png).
 
