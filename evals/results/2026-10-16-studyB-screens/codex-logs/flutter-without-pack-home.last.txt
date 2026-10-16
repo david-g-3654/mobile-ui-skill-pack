@@ -1,0 +1,3 @@
+Built a calming, green-themed budgeting dashboard with a monthly spending summary, category budget progress, and recent transactions. It supports light and dark themes, adapts to larger text, and includes interactive detail sheets.
+
+Flutter analysis passes with no errors or warnings.

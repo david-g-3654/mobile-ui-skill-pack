@@ -1,0 +1,1 @@
+Built a Quiet-styled running stats screen with a distance hero, daily bar chart, weekly comparison, and run log. It includes week switching, accessible daily totals, dark mode, and large-text layouts. Flutter analysis and mobile UI lint both pass with no issues.

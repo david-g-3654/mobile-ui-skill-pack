@@ -1,0 +1,1 @@
+Built a calm, nature-inspired sign-in screen with Apple, Google, and validated email options, plus adaptive light/dark themes and a scrollable layout for larger text. Authentication is preview-only, and the required Flutter analyzer reports no issues.

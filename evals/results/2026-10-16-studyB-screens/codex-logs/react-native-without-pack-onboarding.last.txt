@@ -1,0 +1,1 @@
+Built a warm, sage-toned onboarding screen for “murmur,” featuring layered voice-note cards, an animated waveform preview, and three interactive welcome steps. Includes safe-area support, haptic feedback, and a clear call to action; TypeScript validation passes.

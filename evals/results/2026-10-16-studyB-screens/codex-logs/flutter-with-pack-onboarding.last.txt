@@ -1,0 +1,1 @@
+Built a Quiet-themed welcome screen for “Murmur,” featuring a bold headline, voice-waveform sample note, AI summary, and pinned “Create a note” button. It supports system light/dark themes and large text; Flutter analysis and mobile UI lint both pass cleanly.

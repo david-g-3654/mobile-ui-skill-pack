@@ -1,0 +1,1 @@
+Built a Quiet-themed sneaker detail page with a custom-drawn shoe, selectable sizes, size guide, saved state, and pinned “Add to bag” action. It supports light/dark themes and scalable text; Flutter analysis and mobile UI lint both pass with no issues.

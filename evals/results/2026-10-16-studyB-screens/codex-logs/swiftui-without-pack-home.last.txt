@@ -1,0 +1,1 @@
+Built a warm, sage-and-cream budgeting dashboard with a monthly spending summary, category budgets, and recent transactions. It includes working navigation and an expense-entry sheet that updates the balance and activity list. The required Swift type-check passes.

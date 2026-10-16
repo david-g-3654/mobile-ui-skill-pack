@@ -1,0 +1,1 @@
+Built a warm, forest-green weekly running dashboard with an interactive distance chart, week navigation, pace and time metrics, a longest-run highlight, and weekly goal progress. Includes realistic sample data and passes the requested Swift simulator typecheck.

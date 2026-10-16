@@ -1,0 +1,1 @@
+Built a Quiet-style budgeting home with a prominent remaining balance, monthly progress, grocery budget alert, upcoming bill, and recent expenses. The expense-entry sheet updates totals immediately, with dark-mode and large-text support. Typechecking passed with the macro-sandbox workaround; lint reports zero errors or warnings.

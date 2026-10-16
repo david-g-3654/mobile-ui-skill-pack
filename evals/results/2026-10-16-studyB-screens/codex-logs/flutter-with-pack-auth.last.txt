@@ -1,0 +1,1 @@
+Built a Quiet-styled sign-in screen with a welcoming headline, Apple, Google, and email options, plus light/dark themes and large-text support. Email opens a validated entry flow; authentication is clearly marked as preview-only. Flutter analysis and mobile UI lint both pass cleanly.

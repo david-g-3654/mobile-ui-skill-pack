@@ -1,0 +1,1 @@
+Built a calm, sage-toned onboarding screen for “murmur,” featuring a voice waveform transforming into an organized AI note and a prominent “Find your flow” button. It supports light and dark themes with scrollable layouts for larger text, and the required Flutter analysis passes with no issues.

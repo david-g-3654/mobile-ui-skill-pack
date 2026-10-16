@@ -1,0 +1,1 @@
+Built a polished sneaker detail screen with a custom-drawn sneaker, earthy colors, size selection, favorites, and an interactive shopping bag. It supports light and dark themes, scrollable content, and adaptive sizing for larger text. Flutter analysis passes with no issues.

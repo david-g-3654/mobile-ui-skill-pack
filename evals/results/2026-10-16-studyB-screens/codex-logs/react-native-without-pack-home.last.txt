@@ -1,0 +1,1 @@
+Built a calming, sage-green budgeting dashboard with a spending summary, category budgets, and recent transactions. Includes working navigation, spending insights, and an add-expense modal that updates the balance immediately. TypeScript validation passes.

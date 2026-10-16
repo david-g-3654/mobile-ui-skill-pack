@@ -1,0 +1,1 @@
+Built a warm, nature-inspired sign-in screen with Apple, Google, and email options, botanical artwork, and soft green accents. Email includes validation and a clearly labeled preview confirmation; social buttons explain that authentication isn’t connected. TypeScript validation passes.

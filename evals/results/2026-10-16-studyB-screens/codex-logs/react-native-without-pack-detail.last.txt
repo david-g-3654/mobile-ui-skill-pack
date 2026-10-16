@@ -1,0 +1,3 @@
+Built a sneaker product page with warm neutral tones, olive accents, and a custom vector sneaker illustration. Includes interactive color and size selection, a size guide, wishlist toggle, and add-to-bag confirmation with an updating bag count.
+
+The required TypeScript check passes.

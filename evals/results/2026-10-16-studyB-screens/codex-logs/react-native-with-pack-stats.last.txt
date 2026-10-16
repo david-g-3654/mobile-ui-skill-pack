@@ -1,0 +1,1 @@
+Built a Quiet-style weekly running screen with a prominent distance total, daily chart, week navigation, distance/time toggle, and run history. It supports dark mode, accessible labels, and empty weeks; TypeScript and mobile UI lint both pass with no errors or warnings.

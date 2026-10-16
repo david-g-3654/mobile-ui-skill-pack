@@ -1,0 +1,1 @@
+Built a Quiet-styled settings screen with notification toggles, system/light/dark appearance, subscription controls, and editable account details. It includes a native large-title header and confirmation dialogs; demo changes are session-only. TypeScript and mobile UI lint both pass.

@@ -1,0 +1,168 @@
+== eval_codex/base/home/Screen.swift
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 12 error(s) · 32 warning(s)
+== rn_eval_app/screens/codex_base/home.tsx
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 26 error(s) · 50 warning(s)
+== fl_eval/lib/eval/codex_base/home.dart
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 21 error(s) · 19 warning(s)
+== eval_codex/base/settings/Screen.swift
+    → Add .accessibilityLabel("Verb object").
+
+1 file(s) · 9 error(s) · 23 warning(s)
+== rn_eval_app/screens/codex_base/settings.tsx
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 35 error(s) · 41 warning(s)
+== fl_eval/lib/eval/codex_base/settings.dart
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 10 error(s) · 17 warning(s)
+== eval_codex/base/paywall/Screen.swift
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 8 error(s) · 22 warning(s)
+== rn_eval_app/screens/codex_base/paywall.tsx
+    → Use theme roles: const { c } = useQTheme(); c.ink2 …
+
+1 file(s) · 61 error(s) · 38 warning(s)
+== fl_eval/lib/eval/codex_base/paywall.dart
+    → Use context.q.<role>.
+
+1 file(s) · 26 error(s) · 20 warning(s)
+== eval_codex/base/onboarding/Screen.swift
+    → Use a Palette role (Palette.ink2, Palette.surface …).
+
+1 file(s) · 6 error(s) · 14 warning(s)
+== rn_eval_app/screens/codex_base/onboarding.tsx
+    → Use theme roles: const { c } = useQTheme(); c.ink2 …
+
+1 file(s) · 46 error(s) · 29 warning(s)
+== fl_eval/lib/eval/codex_base/onboarding.dart
+    → Use context.q.<role>.
+
+1 file(s) · 18 error(s) · 21 warning(s)
+== eval_codex/base/detail/Screen.swift
+    → Use a Palette role (Palette.ink2, Palette.surface …).
+
+1 file(s) · 17 error(s) · 14 warning(s)
+== rn_eval_app/screens/codex_base/detail.tsx
+    → Use theme roles: const { c } = useQTheme(); c.ink2 …
+
+1 file(s) · 80 error(s) · 30 warning(s)
+== fl_eval/lib/eval/codex_base/detail.dart
+    → Use context.q.<role>.
+
+1 file(s) · 19 error(s) · 19 warning(s)
+== eval_codex/base/list/Screen.swift
+    → Use a Palette role (Palette.ink2, Palette.surface …).
+
+1 file(s) · 17 error(s) · 25 warning(s)
+== rn_eval_app/screens/codex_base/list.tsx
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 34 error(s) · 50 warning(s)
+== fl_eval/lib/eval/codex_base/list.dart
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 13 error(s) · 16 warning(s)
+== eval_codex/base/stats/Screen.swift
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 10 error(s) · 28 warning(s)
+== rn_eval_app/screens/codex_base/stats.tsx
+    → Use theme roles: const { c } = useQTheme(); c.ink2 …
+
+1 file(s) · 61 error(s) · 30 warning(s)
+== fl_eval/lib/eval/codex_base/stats.dart
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 25 error(s) · 23 warning(s)
+== eval_codex/base/auth/Screen.swift
+    → Use ink for primary actions and one considered accent (Palette.accent / c.accent / context.q.accent).
+
+1 file(s) · 15 error(s) · 11 warning(s)
+== rn_eval_app/screens/codex_base/auth.tsx
+    → Use 4pt-grid tokens (Space.* / space.*).
+
+1 file(s) · 39 error(s) · 25 warning(s)
+== fl_eval/lib/eval/codex_base/auth.dart
+    → Use context.q.<role>.
+
+1 file(s) · 15 error(s) · 9 warning(s)
+== eval_codex/pack/home/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/home.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/home.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/settings/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/settings.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/settings.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/paywall/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/paywall.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/paywall.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/onboarding/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/onboarding.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/onboarding.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/detail/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/detail.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/detail.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/list/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/list.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/list.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/stats/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/stats.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/stats.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== eval_codex/pack/auth/Screen.swift
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== rn_eval_app/screens/codex_pack/auth.tsx
+
+1 file(s) · 0 error(s) · 0 warning(s)
+== fl_eval/lib/eval/codex_pack/auth.dart
+
+1 file(s) · 0 error(s) · 0 warning(s)

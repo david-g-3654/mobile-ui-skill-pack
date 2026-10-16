@@ -1,0 +1,5 @@
+# Codex writes its runtime state here (databases, plugin cache, trust entries in config.toml).
+# Only the committed config.toml is part of the pre-registration.
+*
+!config.toml
+!.gitignore

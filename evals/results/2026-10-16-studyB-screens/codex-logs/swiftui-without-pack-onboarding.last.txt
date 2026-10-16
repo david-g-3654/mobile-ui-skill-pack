@@ -1,0 +1,3 @@
+Created a warm, minimal onboarding screen with sage-green accents, serif headlines, and layered voice-note and AI-summary cards. It includes three onboarding steps, skip navigation, and a completion state.
+
+The required Swift compiler typecheck passes.

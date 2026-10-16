@@ -1,0 +1,1 @@
+Built a Quiet-themed sign-in screen with Apple, Google, and email options, generous spacing, and light/dark support. The email flow includes validation; authentication is clearly marked as preview-only. TypeScript and mobile UI lint both pass.

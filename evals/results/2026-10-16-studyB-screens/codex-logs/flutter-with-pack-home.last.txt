@@ -1,0 +1,1 @@
+Built a Quiet-themed budgeting home screen with a prominent remaining balance, category progress bars, and recent purchases. The “Add expense” sheet updates the budget, with light/dark themes and adaptive large-text layouts. Flutter analysis and mobile UI lint both pass with no errors or warnings.

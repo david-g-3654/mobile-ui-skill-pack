@@ -1,0 +1,1 @@
+Created a calm, journal-inspired paywall with a custom illustration, soft sage colors, and selectable monthly and yearly plans. Includes clear pricing, savings, privacy details, and a purchase-preview action; no real payments are processed. TypeScript validation passes.

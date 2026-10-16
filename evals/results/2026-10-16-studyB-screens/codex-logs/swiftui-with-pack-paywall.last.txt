@@ -1,0 +1,1 @@
+Built a Quiet-style paywall with monthly and yearly plans, yearly savings, three journaling benefits, and a pinned subscription button with clear renewal terms. It supports dark mode and Dynamic Type; purchase and restore actions explicitly identify themselves as previews. Lint passes cleanly, and Swift typechecking passes with macro sandboxing disabled for this environment.

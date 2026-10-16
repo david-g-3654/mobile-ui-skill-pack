@@ -1,0 +1,1 @@
+Built a Quiet-styled transactions screen with a prominent balance, sticky date groups, and realistic banking activity. Search, money-in/out filters, and transaction detail sheets work, with system dark mode and large-text support. Flutter analysis and the mobile UI lint both pass without errors or warnings.

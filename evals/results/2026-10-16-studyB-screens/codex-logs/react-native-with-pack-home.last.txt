@@ -1,0 +1,1 @@
+Built a Quiet-themed budgeting home screen with a prominent spending balance, category budgets, and recent transactions. The “Add expense” form validates entries and updates the budget totals locally, with dark mode and accessible text scaling supported. TypeScript and mobile UI lint both pass with zero errors or warnings.

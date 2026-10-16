@@ -1,0 +1,1 @@
+Built a Quiet-style transactions screen with an available-balance summary, date-grouped activity, search, and money-in/out filters. Tapping a transaction opens its details, including pending status and account information, with dark mode and Dynamic Type support. Type-checking passes with a compiler sandbox workaround; lint reports zero errors or warnings.

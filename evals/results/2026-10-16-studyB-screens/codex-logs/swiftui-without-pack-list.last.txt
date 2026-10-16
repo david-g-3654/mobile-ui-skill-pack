@@ -1,0 +1,1 @@
+Built a banking transactions screen with a forest-green balance card, date-grouped activity, merchant icons, and clear income and spending amounts. Search, money-in/out filters, and transaction detail sheets work with realistic sample data. The required Swift typecheck passes.

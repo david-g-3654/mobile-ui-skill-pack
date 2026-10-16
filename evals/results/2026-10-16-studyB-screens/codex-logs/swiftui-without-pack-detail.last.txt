@@ -1,0 +1,1 @@
+Built a sneaker product page with a custom SwiftUI illustration, earthy colors, size and color selection, favorites, and a size-guide sheet. A fixed Add to Bag bar confirms the selected size, and the required simulator typecheck passes.

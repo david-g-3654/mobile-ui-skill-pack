@@ -1,0 +1,1 @@
+Built a warm, sage-toned banking screen with a monthly cash-flow summary and transactions grouped by date. Includes live search, income/expense filters, date selection, and tappable transaction details. The required TypeScript check passes.

@@ -1,0 +1,1 @@
+Built a Quiet-style journaling paywall with monthly and yearly plans, yearly savings, clear renewal terms, and a pinned CTA. Includes accessible plan selection, dark mode, restore/legal previews, and an exit to a free-journal preview; purchases are demo-only. TypeScript and mobile UI lint both pass with no errors or warnings.

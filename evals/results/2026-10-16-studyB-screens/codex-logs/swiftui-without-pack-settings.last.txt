@@ -1,0 +1,1 @@
+Built a warm, sage-toned settings screen with notification toggles, an appearance picker, a subscription card, and account options. Includes profile and support sheets, sign-out confirmation, and inline sample data. The required Swift typecheck passes.

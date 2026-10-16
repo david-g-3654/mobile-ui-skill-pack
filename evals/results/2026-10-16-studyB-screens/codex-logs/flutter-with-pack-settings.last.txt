@@ -1,0 +1,1 @@
+Built a Quiet-styled settings screen with notification toggles, an appearance picker, subscription details, and account options. It supports light/dark mode and scalable text; Flutter analysis and the mobile UI lint both pass with no issues.

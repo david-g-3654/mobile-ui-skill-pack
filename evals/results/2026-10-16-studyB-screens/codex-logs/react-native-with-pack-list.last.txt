@@ -1,0 +1,1 @@
+Built a Quiet-themed transactions screen with a monthly spending summary, date-grouped payments, merchant search, and money-in/out filters. Transactions expand to show payment details, with dark-mode and large-text support. Typecheck and mobile UI lint pass with no errors or warnings.

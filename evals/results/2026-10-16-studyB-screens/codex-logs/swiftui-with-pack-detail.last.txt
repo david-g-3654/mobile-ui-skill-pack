@@ -1,0 +1,1 @@
+Built a Quiet-styled sneaker detail screen with a large illustration, native size picker, favorites, sharing, and a pinned “Add to bag” action. It supports dark mode and Dynamic Type, with expandable details and a bag summary. Typechecking passes with the compiler sandbox workaround; lint reports zero errors or warnings.

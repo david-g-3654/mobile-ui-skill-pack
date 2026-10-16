@@ -1,0 +1,1 @@
+Built a Quiet-style sign-in screen with a warm canvas, native Apple sign-in, Google branding, and an email sheet with inline validation. It supports dark mode and Dynamic Type; backend authentication remains unconnected. Lint passes cleanly, and Swift typechecking passes with `-disable-sandbox` to accommodate the environment’s macro restriction.

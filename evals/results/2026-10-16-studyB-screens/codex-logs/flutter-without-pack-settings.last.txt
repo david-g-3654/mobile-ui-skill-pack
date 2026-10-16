@@ -1,0 +1,1 @@
+Built a warm, sage-toned settings screen with notification toggles, appearance selection, subscription details, and account options. It includes light and dark themes, a scrollable layout, and interactive detail sheets. Flutter analysis passes with no errors or warnings.

@@ -1,0 +1,1 @@
+Built `pack/settings/Screen.swift` with Quiet styling, notification preferences, appearance switching, subscription details, and account controls. Includes dark-mode and large-text previews; billing and notification delivery are clearly marked as sample integrations. Swift type-checking passes with a macro sandbox workaround, and lint reports zero errors or warnings.

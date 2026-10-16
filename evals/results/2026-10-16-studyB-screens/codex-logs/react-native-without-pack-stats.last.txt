@@ -1,0 +1,1 @@
+Built a warm, minimalist running dashboard with interactive distance charts, weekly goal progress, pace and time metrics, and route previews for recent runs. Includes week/month/year views, week navigation, and an expandable run history; TypeScript validation passes.

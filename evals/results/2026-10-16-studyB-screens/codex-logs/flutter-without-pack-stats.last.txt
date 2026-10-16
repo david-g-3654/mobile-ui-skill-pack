@@ -1,0 +1,1 @@
+Built a calm, forest-green running dashboard with a weekly distance chart, pace and time summaries, goal progress, and recent runs. It supports light and dark themes with scrollable, text-scale-aware layouts, and Flutter analysis passes with no issues.

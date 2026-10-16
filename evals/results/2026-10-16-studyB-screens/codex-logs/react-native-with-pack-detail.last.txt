@@ -1,0 +1,1 @@
+Built a Quiet-style sneaker detail screen with custom sneaker artwork, color and size selection, save/share actions, expandable details, and a pinned “Add to bag” button. It supports dark mode and large text, and passes TypeScript and mobile UI lint with zero warnings.

@@ -1,0 +1,3 @@
+Built a calm, green-accented banking screen with an account balance card, date-grouped transactions, search, and money-in/out filters. It supports light and dark themes, adapts to large text, and opens transaction details on tap.
+
+Flutter analysis passes with no issues.

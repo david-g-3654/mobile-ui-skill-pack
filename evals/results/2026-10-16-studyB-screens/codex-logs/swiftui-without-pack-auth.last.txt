@@ -1,0 +1,1 @@
+Built a warm, botanical sign-in screen with Apple, Google, and expandable email options, plus email validation and privacy links. Authentication actions clearly indicate that a backend connection is required. The requested Swift typecheck passes.

@@ -1,0 +1,1 @@
+Built a calm, botanical-inspired settings screen with notification toggles, light/dark/system appearance, subscription options, and account controls. Includes interactive preference sheets and sign-out confirmation; the required TypeScript check passes.

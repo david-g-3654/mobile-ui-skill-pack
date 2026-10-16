@@ -1,0 +1,1 @@
+Built a Quiet-skinned welcome screen with bold typography, a warm waveform, and a safe-area-pinned “Try a sample” button. The sample lets users compare a transcript with its AI summary and save it for the session, with dark mode and large-text support. TypeScript and mobile UI lint pass with zero errors or warnings.

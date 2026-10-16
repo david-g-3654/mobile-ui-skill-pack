@@ -1,0 +1,1 @@
+Built a Quiet-style journaling paywall with monthly and yearly plans, yearly savings, clear renewal terms, and a pinned subscribe button. It supports light/dark mode and large text, with purchase actions explicitly marked as previews. Flutter analysis and mobile UI lint both pass without warnings or errors.

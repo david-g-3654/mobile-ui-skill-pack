@@ -1,0 +1,1 @@
+Created a calm, journal-inspired paywall with a custom journal illustration, sage accents, and selectable monthly and yearly plans with clear renewal pricing. It supports light and dark themes, scrolls for larger text, and includes restore and legal controls with preview feedback. Flutter analysis passes with no issues.

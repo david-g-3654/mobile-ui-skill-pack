@@ -1,0 +1,1 @@
+Created a warm, journal-inspired paywall with illustrated notebooks, membership benefits, and selectable monthly and yearly plans. It includes clear renewal pricing, restore and policy actions, and a preview-only purchase confirmation; the required iOS 17 typecheck passes.

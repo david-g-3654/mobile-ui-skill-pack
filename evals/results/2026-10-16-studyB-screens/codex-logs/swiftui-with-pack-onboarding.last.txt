@@ -1,0 +1,1 @@
+Built a Quiet-style welcome screen with a bold headline, warm waveform, and sample AI-organized note. “Try a sample” opens a native sheet for switching between transcript and summary, with dark mode and Dynamic Type support. Typechecking passes with the compiler macro-sandbox workaround; lint reports zero errors or warnings.
